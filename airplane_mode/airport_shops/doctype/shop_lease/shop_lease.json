@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{shop}-{tenant}-{####}",
+ "creation": "2025-05-22 21:08:33.059910",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shop",
+  "monthly_rent",
+  "payment_status",
+  "column_break_irem",
+  "tenant",
+  "month"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop",
+   "link_filters": "[[\"Shop\",\"status\",\"=\",\"vacant\"]]",
+   "options": "Shop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_rent",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rent"
+  },
+  {
+   "fieldname": "column_break_irem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "reqd": 1
+  },
+  {
+   "default": "unpaid",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "paid\nunpaid",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-05-23 15:45:49.318494",
+ "modified_by": "Administrator",
+ "module": "Airport Shops",
+ "name": "Shop Lease",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

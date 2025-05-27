@@ -1,0 +1,7 @@
+<div class="border rounded-lg my-2 p-5">
+	<h5 class="mt-1">{{ frappe.db.get_value("Airplane", doc.airplane , "airline") }}</h5>
+	<h6 class="text-muted">{{ doc.source_airport_code }} &rarr; {{ doc.destination_airport_code }}</h6>
+	<p>{{ frappe.format_date(doc.date_of_departure) }} | {{  frappe.format(doc.time_of_departure, {'fieldtype': 'Time'})  }} | {{ frappe.utils.format_duration(doc.duration) }}</p> 
+	<a href="{{ doc.route }}" class="text-info">View Flight</a>
+</div>
+<!-- this is a sample default list template -->

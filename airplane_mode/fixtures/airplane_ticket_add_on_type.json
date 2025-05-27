@@ -1,0 +1,30 @@
+[
+ {
+  "description": "250ml of Orange Juice",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-05-16 12:23:23.640842",
+  "name": "Orange Juice"
+ },
+ {
+  "description": "White Chocolate",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-05-16 12:23:04.512219",
+  "name": "Chocolate"
+ },
+ {
+  "description": "Chicken Biryani",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-05-16 12:22:33.335845",
+  "name": "Biryani"
+ },
+ {
+  "description": "100g of Amla",
+  "docstatus": 0,
+  "doctype": "Airplane Ticket Add-on Type",
+  "modified": "2025-05-21 10:58:16.566380",
+  "name": "Amla"
+ }
+]

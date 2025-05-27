@@ -1,0 +1,44 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "width": 0
+  },
+  {
+   "fieldname": "shop_count",
+   "fieldtype": "Int",
+   "label": "Shop Count",
+   "width": 0
+  }
+ ],
+ "creation": "2025-05-23 09:45:52.294630",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2025-05-23 10:38:40.385124",
+ "modified_by": "Administrator",
+ "module": "Airport Shops",
+ "name": "Shop in Airport",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT airport, COUNT(*) AS shop_count FROM tabShop GROUP BY airport;",
+ "ref_doctype": "Shop",
+ "report_name": "Shop in Airport",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

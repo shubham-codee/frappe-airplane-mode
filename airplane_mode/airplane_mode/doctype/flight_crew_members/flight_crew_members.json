@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-22 16:25:40.092772",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "full_name",
+  "column_break_pjis",
+  "designation"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "link_filters": "[[\"Staff\",\"status\",\"=\",\"Free\"]]",
+   "options": "Staff"
+  },
+  {
+   "fieldname": "column_break_pjis",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "full_name.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-22 17:02:06.622039",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Crew Members",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

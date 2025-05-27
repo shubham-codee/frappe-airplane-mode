@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="
+  background-color: {{ color }};
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:{% if color == 'white' %}black{% else %}white{% endif %};
+  font-size: 1.5rem;
+">
+  This is a {{ color }} box!
+</div>
+
+</body>
+</html>

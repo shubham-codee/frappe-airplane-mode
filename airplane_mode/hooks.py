@@ -8,6 +8,17 @@ app_license = "mit"
 # Apps
 # ------------------
 
+fixtures = ["Airplane Ticket Add-on Type", {
+	"doctype": "Shop Type",
+       "filters": {
+           "enabled": 1
+       }
+}]
+
+website_route_rules = [
+    {"from_route": "/shops/<shop_name>", "to_route": "/shops/details"}
+]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -148,23 +159,11 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"airplane_mode.tasks.all"
-# 	],
-# 	"daily": [
-# 		"airplane_mode.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"airplane_mode.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"airplane_mode.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"airplane_mode.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"monthly": [
+		"airplane_mode.api.send_mail_for_rent_due"
+	],
+}
 
 # Testing
 # -------

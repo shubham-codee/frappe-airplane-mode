@@ -1,0 +1,42 @@
+{
+ "add_total_row": 1,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month",
+   "width": 0
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount",
+   "width": 0
+  }
+ ],
+ "creation": "2025-05-23 14:55:43.799684",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-05-23 15:17:21.786788",
+ "modified_by": "Administrator",
+ "module": "Airport Shops",
+ "name": "Rent by Month",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT month, SUM(amount_paid) as total_amount FROM `tabRent Payment` GROUP BY month",
+ "ref_doctype": "Rent Payment",
+ "report_name": "Rent by Month",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

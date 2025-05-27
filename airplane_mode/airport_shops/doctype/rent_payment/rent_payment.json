@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{shop_lease}-PAYMENT-{####}",
+ "creation": "2025-05-22 21:14:37.031824",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_dz94",
+  "shop_lease",
+  "month",
+  "column_break_xdzy",
+  "amount_paid",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_dz94",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rent Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "shop_lease",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop Lease",
+   "link_filters": "[[\"Shop Lease\",\"payment_status\",\"=\",\"unpaid\"]]",
+   "options": "Shop Lease",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xdzy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shop_lease.monthly_rent",
+   "fieldname": "amount_paid",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount Paid",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "shop_lease.month",
+   "fieldname": "month",
+   "fieldtype": "Data",
+   "label": "Month",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-05-23 15:14:36.865927",
+ "modified_by": "Administrator",
+ "module": "Airport Shops",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

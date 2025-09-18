@@ -1,3 +1,590 @@
+  display calendar of current year 
+  cal -y
+  
+  display caledar for june 2021
+  cal 6 2021
+  
+  current date highlighted
+  ncal
+  
+  specific year
+  cal 1996
+  
+  previous, current and next month calendar
+  cal -3
+  
+  calendar without weekdays
+  cal | tail -n +3
+  
+  particular month and year
+  cal 6 2021
+  
+  specific number of months before and after a certain month
+  cal -A 2 -B 2 6 2021
+
+  current date and time
+  date
+
+  yyyy-mm-dd
+  date -d "22-06-2022" +%F
+
+  hh:mm:ss format
+  date -d "22-06-2022" +%T
+
+  weekday
+  date -d "22-06-2022" +%A
+
+  directory nested
+  tree
+
+  remove single empty directory
+  rmdir
+
+  remove non emtpy directory
+  rm -r kbs
+
+  hidden files 
+  ls -a 
+
+  detailed infomation about files
+  ls -l 
+
+  display file in reverse order
+  ls -r
+
+  sort file list by modification time
+  ls -t
+
+  shows file size before each name 
+  ls -s
+
+  file size in human readable format
+  ls -h
+
+  sort file largest to smallest
+  ls -S
+
+  limit depth of directories shown using tree
+  tree -L 2
+
+  hidden files using tree command
+  tree -a
+
+  overwrite using cat 
+  >
+
+  append using cat
+  >>
+
+  concatenate multiple files into a single file
+  cat file1 file2 > file3
+
+  tab characters using cat
+  cat -T file
+
+  read multiple files using cat
+  cat file1 file2
+
+  where is password sotred
+  cat /etc/passwd
+
+  rename file
+  mv file1 file2
+
+  copy file
+  cp file1 file2
+
+  copy a directory and its contents
+  cp -r dir1 dir2
+
+  file permission in a directory
+  ls -l 
+
+  terminal type
+  tty
+
+  only files excluding directories.
+  ls -l | grep "^-r"
+
+  only directories excluding files
+  ls -l | grep "^d"
+
+  files sorted by modification time (latest first)
+  ls -lt
+
+  files sorted by size
+  ls -S
+
+  files in reverse order
+  ls -r
+
+  content of a specific directory
+  ls
+
+  convert 192 to hexadecimal number
+  echo "obase=16; 192" | bc
+
+  echo "ibase=<input_base>; obase=<output_base>; <number>" | bc
+
+  login information about the user
+  whoami
+
+  manual about something
+  man who
+
+  lock your terminal for two minutes
+  sleep 2m
+
+  check file type
+  file filename
+
+  change file permission of the file student to add execute privilege using relative manner
+  chmod +x student
+
+  rwx-r--r-- using absolute manner
+  chmod 754 student
+
+  change ownership of a file or directory 
+  sudo adduser raj
+  sudo chown raj student
+
+  change group 
+  sudo adduser developers
+  sudo chgrp developers student
+
+  search for a keyword in all manual pages
+  sudo mandb
+  man -k copy
+
+  display the first 5 lines of a file
+  head -n 5 poem.txt
+
+  display last 20 lines of a file
+  tail -n 20 file
+
+  extract first 10 characters from each line of a file
+  cut -c 1-10 file 
+
+  extract second field(column) of a file where fields are separated by comma
+  cut -d "," -f 2 data.csv
+
+  use cut with pipe
+  cat users.txt | cut -d ":" -f 2
+
+  sort the contents of a file alphabetically
+  sort file
+
+  sort a file numerically
+  sort -n marks.txt
+  sort -nr marks.txt
+
+  remove duplicate lines while sorting
+  sort -u file
+
+  sort file and save output to a new file
+  sort file > newFile
+
+  compare both files 
+  cmp file1 file2
+
+  suppress all output and only check if files are different
+  cmp -s file1 file2 
+  echo $?
+
+  compare first n bytes of two files
+  cmp -n 5 file1 file2
+
+  lowercase to uppercase 
+  tr "a-z" "A-Z" < lowercase.txt
+
+  remove all digits from a string
+  tr -d "0-9" < file
+
+  delete specific character using tr
+  tr -d "@#$%" < file
+
+  replace multiple spaces with a single space using tr
+  cat -s " " < file
+
+  remove newlines from input
+  tr -d "\n" < lines.txt
+
+  replace all digits with a # symbol
+  tr "0-9" "#" < file
+
+  count number of lines, words, characters
+  wc -l, -w, -c file
+
+  display only uniq lines
+  sort file | uniq
+
+  ignore case while comparing lines
+  sort file | uniq -i
+
+  write output to another file 
+  sort file | uniq > boom
+
+  echo "linux is powerful" ! tee output.txt
+
+  shell script to add two numbers
+  echo "enter first number"
+  read num1
+  echo "enter second number:"
+  read num2
+  sum=$((num1+num2))
+  echo "the sum is: $sum"
+
+  shell script to perform mathematical operations
+  echo "enter first number:"
+  read a
+  echo "enter second number: "
+  read b
+  echo "select operation + - * /"
+  read op
+  
+  result=0
+  
+  case "$op" in
+  	+) result=$(( a + b  )) ;;
+  	-) result=$(( a - b  )) ;;
+  	\*) result=$(( a * b  )) ;;
+  	/) result=$(( a / b  )) ;;
+  	*) echo "invalid operation"; exit 1 ;;	
+  esac
+  
+  echo "result: $result"
+
+  shell script to accept and check the highest no from two nos. 
+  echo "enter first number: "
+  read num1
+  echo "enter second number: "
+  read num2
+  
+  if [ $num1 -gt $num2 ]; then
+  	echo "$num1 is the highest number"
+  elif [ $num1 -lt $num2 ]; then
+  	echo "$num2 is the highest number"
+  else
+  	echo "both number are equal"
+  fi
+
+  shell script to accept and check the highest no from three nos.
+  echo "enter first number: "
+  read num1
+  echo "enter second number: "
+  read num2
+  echo "enter third number: "
+  read num3
+  
+  if [ $num1 -gt $num2 ] && [ $num1 -gt $num2 ]; then
+  	echo "$num1 is the highest."
+  elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]; then
+  	echo "$num2 is the highest."
+  else 
+  	echo "$num3 is the highest."
+  fi
+
+  shell script to calculate simple interest
+  echo "enter principal amount: "
+  read p
+  echo "enter rate: "
+  read r
+  echo "enter time: "
+  read t
+  si=$(( ( p * r * t  )/100  ))
+  echo "simple interest: $si"
+
+  shell script to print triangle
+  printf "Enter n: "
+  read n
+  
+  i=1
+  while [ "$i" -le "$n" ]; do
+    j=1
+    line=""
+    while [ "$j" -le "$i" ]; do
+      line="$line$j"
+      j=$((j+1))
+    done
+    echo "$line"
+    i=$((i+1))
+  done
+
+  echo "enter a number: "
+  read n
+  
+  for (( i=1; i<=n; i++ ))
+  do
+  	for (( j=1; j<=i; j++ ))
+  	do
+  		echo -n "$j "
+  	done
+  	echo
+  done
+
+  shell script to accept two filenames from the user and copy the first file onto second
+  echo
+  read
+  cp $f1 $f2
+
+  shell script to test two strings which are equal
+  echo "enter first string: "
+  read str1
+  echo "enter second string: "
+  read str2
+  if [ "$str1" = "$str2" ]; then
+  	echo "strings are equal"
+  else
+  	echo "strings are unequal"
+  fi
+
+  shell script to determine length of string
+  echo "${#str}"
+
+  shell script to extract substring
+  str="Welcome to VNSGU University"
+  
+  echo "substring a: ${str:0:10}"
+  echo "substring b: ${str:11:5}"
+
+  shell script to validate only alphabets and has at least 10 characters
+  echo "enter your name"
+  read str
+  
+  if [ ${#str} -ge 10 ]; then
+  	case $str in
+  		*[!A-Za-z]*) echo "invalid string:" ;;
+  		*) echo "valid string" ;;
+  
+  	esac	
+  else
+  	echo "invalid string"
+  fi
+
+  shell script to calculate salary
+  echo "Enter basic salary:"
+  read basic
+  if [ "$basic" -lt 15000 ]; then
+      HRA=$(echo "$basic * 0.10" | bc)
+      DA=$(echo "$basic * 0.90" | bc)
+  else
+      HRA=500
+      DA=$(echo "$basic * 0.98" | bc)
+  fi
+  gross=$(echo "$basic + $HRA + $DA" | bc)
+  echo "Basic Salary: $basic"
+  echo "HRA: $HRA"
+  echo "DA: $DA"
+  echo "Gross Salary: $gross"
+
+  shell script to check palidrome or not
+  echo "Enter a number:"
+  read num
+  
+  rev=0
+  temp=$num
+  
+  while [ $temp -gt 0 ]
+  do
+      digit=$((temp % 10))
+      rev=$((rev * 10 + digit))
+      temp=$((temp / 10))
+  done
+  
+  if [ $num -eq $rev ]; then
+      echo "$num is a palindrome"
+  else
+      echo "$num is not a palindrome"
+  fi
+
+  find all lines in a file contain the word
+  grep "kbs" records.txt
+
+  display the line numbers of lines containing "failed"
+  grep -n "failed" records.txt
+
+  find lines that do not contain the word "success" in records.txt
+  grep -v "success" records.txt
+
+  search for lines start with "error" in record.txt
+  grep "^error" records.txt
+
+  find lines ending with ".com" in an email list emails.txt
+  grep "\.com$" emails.txt
+
+  search recursively for the word "hello" in all files within the tybca directory
+  grep -r "hello" tybca
+
+  display only the filenames that contain the word "password" in the /etc directory
+  grep -r -l "password" /etc
+
+  find all lines in data.csv that contain exactly 5 digits
+  grep "^[0-9]\{5\}" data.csv
+  
+
+  
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
+  
+  
+
+  
+
+
+  
+  
+
+
+
+
+
+regular expression validator
+alphabets only ^
+
+'in master page when adding do not include the form tag'
+
+Session["role"] = "admin";
+Session["role"] = "user";
+
+gridview properties
+
+columns
+  boundfield => datafield, headertext
+  commandfield
+
+autogeneratecolumns = false
+
+if (Session["role"] != null && Session["role"].ToString() == "admin")
+ {
+     GVCategories.Columns[GVCategories.Columns.Count - 1].Visible = true;
+ }
+ else
+ {
+     GVCategories.Columns[GVCategories.Columns.Count - 1].Visible = false;
+
+ }
+
+protected void GVCategories_RowDeleting(object sender, GridViewDeleteEventArgs e)
+{
+    int no = 0;
+    try
+    {
+        if (conn.State == ConnectionState.Closed)
+        {
+            conn.Open();
+
+            cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "DELETE FROM category WHERE id=@id";
+
+            int id = Convert.ToInt32(GVCategories.DataKeys[e.RowIndex].Value);
+
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@id", id);
+
+            no = cmd.ExecuteNonQuery();
+        }
+    }
+    catch (Exception ex)
+    {
+        Response.Write("GVCategories_RowDeleting: " + ex.Message);
+    }
+    finally
+    {
+        if (conn.State == ConnectionState.Open)
+        {
+            conn.Close();
+        }
+
+        if (no > 0)
+        {
+            FillGVCategories();
+        }
+    }
+
+}
+
+protected void GVCategories_RowEditing(object sender, GridViewEditEventArgs e)
+{
+    GVCategories.EditIndex = e.NewEditIndex;
+    FillGVCategories();
+}
+
+protected void GVCategories_RowUpdating(object sender, GridViewUpdateEventArgs e)
+{
+    int id = Convert.ToInt32(GVCategories.DataKeys[e.RowIndex].Value);
+
+    TextBox textBox = (TextBox)GVCategories.Rows[e.RowIndex].Cells[0].Controls[0];
+    string newCategory = textBox.Text;
+
+    if (conn.State == ConnectionState.Closed)
+    {
+        conn.Open();
+
+        cmd = new MySqlCommand();
+        cmd.Connection = conn;
+        cmd.CommandType = CommandType.Text;
+        cmd.CommandText = "UPDATE category SET category_name=@category_name WHERE id=@id;";
+        cmd.Parameters.Clear();
+        cmd.Parameters.AddWithValue("@category_name", newCategory);
+        cmd.Parameters.AddWithValue("@id", id);
+        cmd.ExecuteNonQuery();
+
+        GVCategories.EditIndex = -1;
+        FillGVCategories();
+    }
+}
+
+protected void GVCategories_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+{
+    GVCategories.EditIndex = -1;
+    FillGVCategories();
+}
+
+ void GetConnection()
+ {
+     try
+     {
+         conn = new MySqlConnection();
+         conn.ConnectionString = "server=localhost;user=root;database=db_college";
+         conn.Open();
+     }
+     catch (Exception ex)
+     {
+         Response.Write("GetConnection: " + ex.Message.ToString());
+     }
+     finally
+     {
+         if (conn != null)
+         {
+             conn.Close();
+         }
+     }
+ }
+
 MIT License
 
 Copyright (c) [year] [fullname]
